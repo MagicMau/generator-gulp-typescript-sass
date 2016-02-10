@@ -62,7 +62,10 @@ gulp.task('typescript', function() {
         .pipe(sourcemaps.init())
         .pipe(ts(tsProject));
     return tsResult.js
-        .pipe(sourcemaps.write())
+        .pipe(sourcemaps.write({
+            sourceRoot: '/ts',
+            includeContent: false
+        }))
         .pipe(gulp.dest('app/js'));
 })
 
