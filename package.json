@@ -1,8 +1,8 @@
 {
   "name": "generator-gulp-typescript-sass",
   "version": "0.1.0",
-  "description": "Generator for Gulp with Typescript and Sass, using BrowserSync",
-  "homepage": "",
+  "description": "Generator for Gulp with Typescript and Sass, using BrowserSync. Also contains settings files for use in Visual Studio Code.",
+  "homepage": "https://github.com/MagicMau/generator-gulp-typescript-sass",
   "author": {
     "name": "Maurits Elbers",
     "email": "magicmau@gmail.com",
