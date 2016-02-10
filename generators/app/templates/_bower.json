@@ -1,0 +1,18 @@
+{
+  "name": "<%= name %>",
+  "description": "",
+  "authors": [
+    "<%= author %>"
+  ],
+  "license": "<%= license %>",
+  "moduleType": [],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
