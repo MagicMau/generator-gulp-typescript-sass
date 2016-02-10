@@ -2,7 +2,7 @@
   "name": "<%= name %>",
   "version": "1.0.0",
   "description": "",
-  "author": "<%= author %>",
+  "author": "<%- author %>",
   "license": "<%= license %>",
   "devDependencies": {
     "browser-sync": "^2.11.1",

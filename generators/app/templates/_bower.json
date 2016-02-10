@@ -2,7 +2,7 @@
   "name": "<%= name %>",
   "description": "",
   "authors": [
-    "<%= author %>"
+    "<%- author %>"
   ],
   "license": "<%= license %>",
   "moduleType": [],
