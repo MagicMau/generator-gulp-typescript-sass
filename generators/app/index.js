@@ -11,8 +11,15 @@ module.exports = yeoman.generators.Base.extend({
 
         // Have Yeoman greet the user.
         this.log(yosay(
-            'Welcome to the great ' + chalk.red('gulp-typescript-sass') + ' generator!'
+            'Welcome to the great ' + chalk.red('gulp-typescript-sass') + ' generator! ' +
+            'This will set up an empty project with Gulp, Typescript and Sass. I will also add ' +
+            'VSCode settings. For debugging I suggest you install the VSCode Chrome Debugger. ' +
+            chalk.yellow('Have fun!')
         ));
+
+        this.log('You can find the VSCode Chrome Debugger at:');
+        this.log(chalk.cyan('https://github.com/Microsoft/vscode-chrome-debug'));
+        this.log();
 
         // var prompts = [{
         //   type: 'confirm',
@@ -24,19 +31,24 @@ module.exports = yeoman.generators.Base.extend({
         var prompts = [{
             type: 'input',
             name: 'name',
-            message: 'Your project name',
+            message: 'How do you want to name your project',
             default: this.appname
         }, {
-                type: 'input',
-                name: 'author',
-                message: 'Your name',
-                default: 'Maurits Elbers <magicmau@gmail.com>'
-            }, {
-                type: 'input',
-                name: 'license',
-                message: 'License',
-                default: 'UNLICENSED'
-            }]
+            type: 'input',
+            name: 'author',
+            message: 'What is your name',
+            default: 'Maurits Elbers <magicmau@gmail.com>'
+        }, {
+            type: 'input',
+            name: 'license',
+            message: 'What license shall we put on it',
+            default: 'UNLICENSED'
+        }, {
+            type: 'confirm',
+            name: 'disableChromeSessionRestore',
+            message: 'Disable session restore warning when debugging in Chrome',
+            default: true
+        }]
 
         this.prompt(prompts, function(props) {
             this.props = props;
@@ -47,14 +59,14 @@ module.exports = yeoman.generators.Base.extend({
     },
 
     writing: function() {
-        
+
         var tpls = ['_package.json', '_bower.json'];
         tpls.forEach(function(element) {
             this.fs.copyTpl(this.templatePath(element), this.destinationPath(element.replace("_", "")), this.props);
         }, this);
-        
+
         this.fs.copy(this.templatePath('gulpfile.js'), this.destinationPath('gulpfile.js'));
-        
+
         var dirs = ['.vscode', 'app', 'app/css', 'app/fonts', 'app/images', 'app/js', 'app/scss', 'app/ts', 'dist', 'bower_components']
         dirs.forEach(function(dir) {
             mkdirp.sync(path.join(this.destinationPath(), dir));
