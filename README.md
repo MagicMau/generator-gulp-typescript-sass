@@ -16,6 +16,13 @@ Then generate your new project:
 yo gulp-typescript-sass
 ```
 
+## Optional
+
+I wrote this template to be used with [Visual Studio code](http://code.visualstudio.com/) as the editor of choice.
+That is why there is a .vscode folder added. It also works best if you have the 
+[Chrome Debugging Extension](https://github.com/Microsoft/vscode-chrome-debug) installed as well. This will allow you
+to debug the generated app from within VSCode. 
+
 ## Getting To Know Yeoman
 
 Yeoman has a heart of gold. He&#39;s a person with feelings and opinions, but he&#39;s very easy to work with. If you think he&#39;s too opinionated, he can be easily convinced. Feel free to [learn more about him](http://yeoman.io/).
